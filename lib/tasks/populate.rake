@@ -10,6 +10,8 @@ namespace :db  do
     # create the specified accounts
     Account.populate num_accounts do |acct|
       acct.name = Faker::Company.name
+      acct.salesforce_id = Faker::Number.number
+      acct.region = Faker::Address.city
     end
 
     print "#{num_accounts} created.\n"

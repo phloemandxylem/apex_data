@@ -7,9 +7,14 @@ namespace :db  do
     print "How many fake Contacts do you want? "
     num_contacts = $stdin.gets.to_i
 
+
     # create the specified accounts
     Contact.populate num_contacts do |con|
       con.name = Faker::Name.name
+      con.position = 'Health Educator'
+      con.status = 'current'
+      con.region = 'New York'
+      con.program_type = 'RCM'
     end
 
     print "#{num_contacts} created.\n"
